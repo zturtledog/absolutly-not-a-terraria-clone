@@ -1,20 +1,18 @@
-﻿//# purpose : to contain the main renderer and host the entry
+﻿//# purpose : host the entry
 //# contributor : ConfusedParrotfish
 
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using System;
 
 namespace absolutelynotaterrariaclone {
     class Program {
         static void Main(string[] args) {
             subwin win = new subwin();
-            win.start(800, 600, "yay a window");
-            // win.loadsprite("D:/Imggggggss/fixedlgo.jpg");
+            win.start(800, 600, "yay a window", "D:/Imggggggss/fixedlgo.jpg");
         }
 
         class subwin : window {
             public override void init() {
-                //
+                (new image("D:/Imggggggss/fixedlgo.jpg")).tosprite();
             }
 
             public override void update() {

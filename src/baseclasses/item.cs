@@ -1,0 +1,5 @@
+namespace absolutelynotaterrariaclone {
+    class item {
+        //
+    }
+}
