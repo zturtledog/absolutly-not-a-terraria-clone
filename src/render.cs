@@ -10,7 +10,7 @@ using System;
 
 namespace absolutelynotaterrariaclone
 {
-    class window {
+    public class window {
         RenderWindow _window;
 
         Vector2u winsize;
@@ -24,6 +24,8 @@ namespace absolutelynotaterrariaclone
 
             winsize = _window.Size;
 
+            init(this);
+
             //. add event handlers
             //# add event of which activates when closed
             _window.Closed += new EventHandler(OnClosed); // this is very much cursed
@@ -32,9 +34,6 @@ namespace absolutelynotaterrariaclone
             //. main update  
             while (_window.IsOpen) {
                 _window.DispatchEvents();
-
-
-
                 update(this);
                 _window.Display();
             }
@@ -42,17 +41,7 @@ namespace absolutelynotaterrariaclone
 
         //. inputs
 
-        public bool mousedown(string side) {
-            // if (side == "left") {
-            //     return Mouse.isButtonPressed(Mouse.Left);
-            // } else if (side == "right") {
-            //     return Mouse.isButtonPressed(Mouse.Right);
-            // } else if (side == "middle") {
-            //     return Mouse.isButtonPressed(Mouse.Middle);
-            // }
-
-            return false;
-        }
+        // no clue
 
         //. events
 
@@ -171,7 +160,7 @@ namespace absolutelynotaterrariaclone
             return sprite;
         }
 
-        public void resizeImage(float pw, float ph) {
+        public image resizeImage(float pw, float ph) {
             // (sf::Image p_image,float p_width, float p_height
             // Sprite spriteTmp = new Sprite();
             // actial.Size = new Vector2u((uint)pw, (uint)ph);
@@ -197,6 +186,8 @@ namespace absolutelynotaterrariaclone
             }
 
             actial = rimg;
+
+            return this;
         }
     }
 

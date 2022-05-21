@@ -17,5 +17,13 @@ namespace absolutelynotaterrariaclone {
         public void setile(int x, int y, int id) {
             //
         }
+
+        public void getile(int x, int y, int id) {
+            //
+        }
+    }
+
+    public class tilemap {
+        //
     }
 }
