@@ -13,6 +13,7 @@ namespace absolutelynotaterrariaclone {
         class subwin : window {
             public override void init(window win) {
                 Console.WriteLine(new image("D:/imggggggss/vsfrd.png").tosprite());
+                mousedown("");
             }
 
             public override void update(window win) {

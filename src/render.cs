@@ -43,13 +43,14 @@ namespace absolutelynotaterrariaclone
         //. inputs
 
         public bool mousedown(string side) {
-            if (side == "left") {
-                return Mouse.isButtonPressed(Mouse.Left);
-            } else if (side == "right") {
-                return Mouse.isButtonPressed(Mouse.Right);
-            } else if (side == "middle") {
-                return Mouse.isButtonPressed(Mouse.Middle);
-            }
+            // if (side == "left") {
+            //     return Mouse.isButtonPressed(Mouse.Left);
+            // } else if (side == "right") {
+            //     return Mouse.isButtonPressed(Mouse.Right);
+            // } else if (side == "middle") {
+            //     return Mouse.isButtonPressed(Mouse.Middle);
+            // }
+
             return false;
         }
 
