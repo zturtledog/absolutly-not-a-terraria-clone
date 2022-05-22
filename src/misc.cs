@@ -75,7 +75,16 @@ namespace absolutelynotaterrariaclone {
                 }
                 if (active) {
                     trst peek = (trst)que.Peek();
-                    win.drawimage(peek.thumbnail().resizeImage(64,64), ((int)win.size().x())-80, 90);
+                    if (peek.style() == 0) {
+                        win.drawimage(new image("src/assets/borderone.png").resizeImage(246,68),((int)win.size().x())-246,5);
+                    }else if (peek.style() == 1) {
+                        win.textcol(new color("#000000ff"));
+                        win.drawimage(new image("src/assets/bordertwo.png").resizeImage(246,68),((int)win.size().x())-246,5);
+                    }
+
+                    win.text(peek.title(), ((int)win.size().x())-180, 20, 20);
+                    win.text(peek.sub(), ((int)win.size().x())-162, 37, 15);
+                    win.drawimage(peek.thumbnail().resizeImage(48,48), ((int)win.size().x())-237, 16);
                 }
             }else{
                 st = helper.utc();
@@ -96,6 +105,18 @@ namespace absolutelynotaterrariaclone {
 
             public image thumbnail() {
                 return icon;
+            }
+
+            public string title() {
+                return name;
+            }
+
+            public string sub() {
+                return disc;
+            }
+
+            public int style() {
+                return styl;
             }
         }
     }

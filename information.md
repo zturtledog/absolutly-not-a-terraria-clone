@@ -3,7 +3,10 @@
 ~ render.cs
     # sprite
     0 shape
-    0 text
+        0 ellipse
+        0 rect
+        0 custom
+    # text
     0 input
 0 pysics.cs
     0 actial

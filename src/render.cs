@@ -15,8 +15,14 @@ namespace absolutelynotaterrariaclone
 
         Vector2u winsize;
 
+        Font thefont;
+        
+        Color fillc = new color("#ffffff").sfml();
+        Color strokec;
+        Color textc = new color("#ffffffff").sfml();
+
         public void start(int width, int height, string title, string icon) {
-            Image image = new Image(icon);
+            Image image = new Image(icon);;
 
             _window = new RenderWindow(new VideoMode((uint)width, (uint)height), "SFML window");
             _window.SetVisible(true);
@@ -87,26 +93,12 @@ namespace absolutelynotaterrariaclone
         //. component renderers
 
         public void drawimage(image _image, int x, int y) {
-            // vec2d nwidth = mapliplier(_image.width(), _image.height());
-            // _image.resizeImage((float)nwidth.x(),(float)nwidth.y());
             Sprite spr = _image.tosprite();
-            spr.Position = new Vector2f((float)x, (float)y);
-            // Console.WriteLine(spr);            
+            spr.Position = new Vector2f((float)x, (float)y);           
             _window.Draw(spr);
         }
         public void ellipse(int x, int y, int w, int h) {
-            // ConvexShape ellipse;
-            // ellipse.setPointCount(70);
-
-            // for(int i = 0; i<70; i++){
-            //     float rad=(360/70*i)/(360/MathF.PI/2);
-            //     float ix=MathF.Acos(rad)*w;
-            //     float iy=MathF.Asin(rad)*h;
-
-            //     ellipse.setPoint(i,new Vector2(ix+x,iy+y));
-            // };
-
-            // ellipse.setPosition(100,100);
+            //
         }
         public void rect() {
             //
@@ -117,8 +109,30 @@ namespace absolutelynotaterrariaclone
         public void point() {
             //
         }
-        public void text() {
-            //
+        public void text(string text, int x, int y, uint size) {
+            Text txt = new Text(text, thefont, size);
+            txt.FillColor = textc;
+            // Console.WriteLine(txt);
+            txt.Position = (new vec2d((double)x, (double)y)).tovecf();
+            _window.Draw(txt);
+        }
+
+        public void clear() {
+            _window.Clear();
+        }
+
+        public void loadfont(string path) {
+            thefont = (new Font(path));
+        }
+    
+        public void fill(color cll) {
+            fillc = cll.sfml();
+        }
+        public void textcol(color cll) {
+            textc = cll.sfml();
+        }
+        public void stroke(color cll) {
+            strokec = cll.sfml();
         }
     }
 
@@ -224,6 +238,36 @@ namespace absolutelynotaterrariaclone
 
         public Vector2f tovecf() {
             return new Vector2f((float)ix, (float)iy);
+        }
+    }
+
+    public class color {
+        Color actial;
+        
+        public color(Color cll) {
+            actial = cll;
+        }
+
+        public color(string hex) {
+            //# 00 00 00 00
+            //1 23 45 67 89
+            // actial = new Color(Convert.ToByte(hex.Substring(1,2),16),Convert.ToByte(hex.Substring(3,2),16),Convert.ToByte(hex.Substring(5,2),16));
+            actial = new Color((uint)Convert.ToInt32(
+                hex.Length > 7 ? 
+                    hex.Substring(1,8) : //#00000000
+                    hex.Substring(1,6),16)); //#000000 
+        }
+
+        public color(byte r, byte g, byte b) {
+            actial = new Color(r,g,b);
+        }
+
+        public Color sfml() {
+            return actial;
+        }
+
+        public void hex() {
+            //
         }
     }
 }
