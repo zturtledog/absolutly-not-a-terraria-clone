@@ -14,6 +14,10 @@ namespace absolutelynotaterrariaclone {
             oy = y;
         }
 
+        public void draw(window win) {
+            //
+        }
+
         public void setile(int x, int y, int id) {
             //
         }

@@ -7,10 +7,19 @@ namespace absolutelynotaterrariaclone {
     class Program {
         public static window win;
 
+        //. testing
+        
+        static int fps,avg,times;
+        static long putc;
+
+        //. entrypoint
+
         static void Main(string[] args) {
             win = new subwin();
             win.start(800, 600, "yay a window", "D:/Imggggggss/fixedlgo.jpg");
         }
+
+        //. implementation
 
         class subwin : window {
             public toaster toastr;
@@ -31,6 +40,12 @@ namespace absolutelynotaterrariaclone {
                 drawimage(new image("D:/imggggggss/vsfrd.png"), 0, 0); 
                 text("hello",0,0,12);
                 toastr.update(win);
+
+                if(helper.utc()!=putc){avg+=fps;times++;fps=0;}putc=helper.utc();fps++;
+            }
+
+            public override void close(window win) {
+                Console.WriteLine("---------------------------\n"+avg/times);
             }
         }
     }

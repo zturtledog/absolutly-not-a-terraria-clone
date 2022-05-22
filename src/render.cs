@@ -52,6 +52,7 @@ namespace absolutelynotaterrariaclone
         //. events
 
         void OnClosed(object sender, EventArgs e) {
+            close(this);
             // thread.Abort();
             _window.Close();
         }
@@ -74,6 +75,10 @@ namespace absolutelynotaterrariaclone
         }
 
         public virtual void onresize(window win) {
+            //
+        }
+
+        public virtual void close(window win) {
             //
         }
 
