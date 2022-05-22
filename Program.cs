@@ -20,7 +20,7 @@ namespace absolutelynotaterrariaclone {
                 toastr = new toaster(20);
                 
                 toastr.toast("one","The first one",new image("D:/Imggggggss/fixedlgo.jpg"),0);
-                toastr.toast("two","the second two",new image("C:/Users/nycas/Downloads/deno-1536x786.jpg"),0);
+                toastr.toast("two","the second two",new image("C:/Users/nycas/Downloads/deno-1536x786.jpg"),2);
                 toastr.toast("three","the third three",new image("D:/Imggggggss/fixedlgo.jpg"),1);
 
                 loadfont("src/assets/Quicksand-Regular.ttf");

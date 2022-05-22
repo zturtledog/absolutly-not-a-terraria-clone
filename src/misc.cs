@@ -53,6 +53,9 @@ namespace absolutelynotaterrariaclone {
         int maxtime;
         long st;
         bool active = true;
+        image b1 = new image("src/assets/border1.png").resizeImage(246,68);
+        image b2 = new image("src/assets/border2.png").resizeImage(246,68);
+        image b3 = new image("src/assets/border3.png").resizeImage(246,68);
 
         public toaster(int mt) {
             maxtime = mt;
@@ -76,13 +79,16 @@ namespace absolutelynotaterrariaclone {
                 if (active) {
                     trst peek = (trst)que.Peek();
                     if (peek.style() == 0) {
-                        win.drawimage(new image("src/assets/borderone.png").resizeImage(246,68),((int)win.size().x())-246,5);
+                        win.drawimage(b1,((int)win.size().x())-246,5);
                     }else if (peek.style() == 1) {
                         win.textcol(new color("#000000ff"));
-                        win.drawimage(new image("src/assets/bordertwo.png").resizeImage(246,68),((int)win.size().x())-246,5);
+                        win.drawimage(b2,((int)win.size().x())-246,5);
+                    }else if (peek.style() == 2) {
+                        win.textcol(new color("#000000ff"));
+                        win.drawimage(b3,((int)win.size().x())-246,5);
                     }
 
-                    win.text(peek.title(), ((int)win.size().x())-180, 20, 20);
+                    win.text(peek.title(), ((int)win.size().x())-175, 20, 20);
                     win.text(peek.sub(), ((int)win.size().x())-162, 37, 15);
                     win.drawimage(peek.thumbnail().resizeImage(48,48), ((int)win.size().x())-237, 16);
                 }
